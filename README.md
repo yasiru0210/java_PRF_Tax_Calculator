@@ -60,9 +60,7 @@ Calculate SSCL tax based on the value of goods, including sale tax and VAT.
 - **Search Leasing Category**: Find leasing categories based on lease amount and interest rate.
 - **Find Leasing Amount**: Determine the leasing amount based on monthly payment, interest rate, and number of years.
 
-## Code Overview
 
-The application is implemented in Java and follows a modular approach to calculate different types of taxes and leasing payments.
 
 ### Main Class: `taxcalculator`
 
