@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator - Home</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Tax Calculator Application</h1>
+        </div>
+        
+        <div class="nav-menu">
+            <a href="/withholding" class="nav-card">
+                <h3>Withholding Tax</h3>
+                <p>Calculate rent, bank interest, and dividend taxes with progressive tax brackets.</p>
+            </a>
+            
+            <a href="/payable" class="nav-card">
+                <h3>Payable Tax</h3>
+                <p>Calculate tax based on your monthly salary using current tax brackets.</p>
+            </a>
+            
+            <a href="/income" class="nav-card">
+                <h3>Income Tax</h3>
+                <p>Calculate annual income tax based on your total yearly income.</p>
+            </a>
+            
+            <a href="/sscl" class="nav-card">
+                <h3>SSCL Tax</h3>
+                <p>Social Security Contribution Levy calculation including sale tax and VAT.</p>
+            </a>
+            
+            <a href="/leasing" class="nav-card">
+                <h3>Leasing Payment</h3>
+                <p>Calculate leasing payments, search categories, and find maximum leasing amounts.</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

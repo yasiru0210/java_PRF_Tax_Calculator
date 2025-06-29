@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withholding Tax Calculator</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="btn btn-back">← Back to Menu</a>
+        
+        <div class="calculator-form">
+            <h2>Withholding Tax Calculator</h2>
+            
+            <div class="form-group">
+                <label>Select Tax Type:</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" name="taxType" value="rent" id="rent">
+                        <div>
+                            <label for="rent"><strong>Rent Tax</strong></label>
+                            <p>Tax on rental payments above Rs. 100,000</p>
+                        </div>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="taxType" value="bank-interest" id="bank">
+                        <div>
+                            <label for="bank"><strong>Bank Interest Tax</strong></label>
+                            <p>5% tax on annual bank interest</p>
+                        </div>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="taxType" value="dividend" id="dividend">
+                        <div>
+                            <label for="dividend"><strong>Dividend Tax</strong></label>
+                            <p>Progressive tax on dividend income</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="amount">Amount (Rs.):</label>
+                <input type="number" id="amount" class="form-control" placeholder="Enter amount" min="0" step="0.01">
+            </div>
+            
+            <div id="error-message"></div>
+            
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" onclick="calculateWithholdingTax()">Calculate Tax</button>
+                <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+            </div>
+            
+            <div id="result"></div>
+        </div>
+    </div>
+    
+    <script th:src="@{/js/calculator.js}"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSCL Tax Calculator</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="btn btn-back">← Back to Menu</a>
+        
+        <div class="calculator-form">
+            <h2>Social Security Contribution Levy (SSCL) Tax Calculator</h2>
+            
+            <div class="info-card">
+                <h4>SSCL Tax Components</h4>
+                <ul>
+                    <li>• Sale Tax: 2.5% of goods value</li>
+                    <li>• VAT: 15% of (goods value + sale tax)</li>
+                    <li>• Total SSCL Tax: Sale Tax + VAT</li>
+                </ul>
+            </div>
+            
+            <div class="form-group">
+                <label for="valueOfGoods">Value of Goods (Rs.):</label>
+                <input type="number" id="valueOfGoods" class="form-control" placeholder="Enter the value of goods" min="0" step="0.01">
+            </div>
+            
+            <div id="error-message"></div>
+            
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" onclick="calculateSSCLTax()">Calculate SSCL Tax</button>
+                <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+            </div>
+            
+            <div id="result"></div>
+        </div>
+    </div>
+    
+    <script th:src="@{/js/calculator.js}"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leasing Payment Calculator</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="btn btn-back">← Back to Menu</a>
+        
+        <div class="calculator-form">
+            <h2>Leasing Payment Calculator</h2>
+            
+            <div class="form-group">
+                <label>Select Calculation Type:</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" name="calculationType" value="monthly" id="monthly">
+                        <div>
+                            <label for="monthly"><strong>Calculate Monthly Installment</strong></label>
+                            <p>Find monthly payment amount</p>
+                        </div>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="calculationType" value="category" id="category">
+                        <div>
+                            <label for="category"><strong>Search Leasing Category</strong></label>
+                            <p>Compare payment options for different terms</p>
+                        </div>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="calculationType" value="amount" id="amount">
+                        <div>
+                            <label for="amount"><strong>Find Leasing Amount</strong></label>
+                            <p>Determine maximum lease amount based on monthly payment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="leaseAmount">Lease Amount (Rs.):</label>
+                <input type="number" id="leaseAmount" class="form-control" placeholder="Enter lease amount" min="0" step="0.01">
+            </div>
+            
+            <div class="form-group">
+                <label for="monthlyPayment">Monthly Payment (Rs.):</label>
+                <input type="number" id="monthlyPayment" class="form-control" placeholder="Enter monthly payment amount" min="0" step="0.01">
+            </div>
+            
+            <div class="form-group">
+                <label for="interestRate">Annual Interest Rate (%):</label>
+                <input type="number" id="interestRate" class="form-control" placeholder="Enter interest rate" min="0" step="0.01">
+            </div>
+            
+            <div class="form-group">
+                <label for="years">Number of Years (Max 5):</label>
+                <select id="years" class="form-control">
+                    <option value="">Select years</option>
+                    <option value="1">1 Year</option>
+                    <option value="2">2 Years</option>
+                    <option value="3">3 Years</option>
+                    <option value="4">4 Years</option>
+                    <option value="5">5 Years</option>
+                </select>
+            </div>
+            
+            <div id="error-message"></div>
+            
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" onclick="calculateLeasing()">Calculate</button>
+                <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset</button>
+            </div>
+            
+            <div id="result"></div>
+        </div>
+    </div>
+    
+    <script th:src="@{/js/calculator.js}"></script>
+</body>
+</html>
